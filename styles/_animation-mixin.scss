@@ -1,0 +1,46 @@
+@mixin animation(
+    $name, 
+    $duration: 1s, 
+    $iteration-count: infinite, 
+    $delay: 0s,
+    $timing-function: ease,
+    $direction: normal,
+    $fill-mode: none,
+) {
+    animation: {
+        name: $name;
+        duration: $duration;
+        iteration-count: $iteration-count;
+        delay: $delay;
+        timing-function: $timing-function;
+        direction: $direction;
+        fill-mode: $fill-mode;
+    }
+}
+
+@keyframes kf-wave-chars {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: none;
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes kf-slide-chars {
+    0% {
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    50% {
+        opacity: 1;
+        transform: none;
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}

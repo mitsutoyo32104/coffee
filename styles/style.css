@@ -1,18 +1,104 @@
+@keyframes kf-wave-chars {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: none;
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes kf-slide-chars {
+  0% {
+    opacity: 0;
+    transform: translateX(1000px);
+  }
+  50% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
 * {
   font-size: 14px;
 }
 
 .container {
-  padding: 0 30px;
+  padding: 0 20px;
+}
+
+.section-title {
+  padding: 30px 0;
+  background-size: cover;
+  background-position: center;
+  color: White;
+  margin-bottom: 35px;
+  text-align: center;
+  overflow: hidden;
+}
+.section-title > .char {
+  display: inline-block;
+  font-size: 3rem;
+  opacity: 0;
+  animation-name: kf-slide-chars;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+.section-title > .char:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.section-title > .char:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.section-title > .char:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.section-title > .char:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.section-title > .char:nth-child(5) {
+  animation-delay: 1s;
+}
+.section-title > .char:nth-child(6) {
+  animation-delay: 1.2s;
+}
+.section-title > .char:nth-child(7) {
+  animation-delay: 1.4s;
+}
+.section-title > .char:nth-child(8) {
+  animation-delay: 1.6s;
+}
+.section-title > .char:nth-child(9) {
+  animation-delay: 1.8s;
+}
+.section-title > .char:nth-child(10) {
+  animation-delay: 2s;
 }
 
 #mainvisual {
   height: 100vh;
-  background-image: url("../img/mainvisual.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100vw;
   position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+#mainvisual > video {
+  max-width: none;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .header {
@@ -32,9 +118,16 @@
 }
 .nav__item > a {
   color: White;
+  display: inline-block;
   text-decoration: none;
   font-weight: bold;
-  filter: drop-shadow(1px 1px 10px black);
+  text-shadow: 1px 1px 3px black;
+  transition: all 0.3s;
+}
+.nav__item:hover > a {
+  color: red;
+  letter-spacing: 5px;
+  transform: scale(1.3);
 }
 
 .site-title {
@@ -42,7 +135,100 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: 7.5rem;
-  filter: drop-shadow(1px 1px 10px white);
+  color: White;
+  filter: drop-shadow(1px 1px 10px White);
+  display: flex;
+}
+.site-title > .char {
+  display: block;
+  font-size: 7rem;
+  animation-name: kf-wave-chars;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+}
+.site-title > .char:nth-child(1) {
+  animation-delay: 0.15s;
+}
+.site-title > .char:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.site-title > .char:nth-child(3) {
+  animation-delay: 0.45s;
+}
+.site-title > .char:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.site-title > .char:nth-child(5) {
+  animation-delay: 0.75s;
+}
+.site-title > .char:nth-child(6) {
+  animation-delay: 0.9s;
+}
+
+.menu .section-title {
+  background-image: url("../img/menu.jpg");
+  background-attachment: fixed;
+}
+.menu__type {
+  margin-bottom: 35px;
+}
+.menu__title, .location__title, .about__title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  border-bottom: 5px solid red;
+}
+.menu__main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-betweeen;
+}
+.menu__main > dt {
+  width: 87%;
+  text-align: left;
+  border-bottom: 1px dotted black;
+  margin-bottom: 30px;
+}
+.menu__main > dd {
+  width: 13%;
+  text-align: right;
+}
+
+.about {
+  margin-bottom: 60px;
+}
+.about .section-title {
+  background-image: url("../img/about.jpg");
+  background-attachment: fixed;
+}
+.about__content {
+  margin-bottom: 60px;
+}
+.about__content > p {
+  margin-bottom: 30px;
+}
+.about__content > p:last-child {
+  margin-bottom: 0;
+}
+.about .read-more {
+  text-align: center;
+}
+.about .read-more > a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 15px 40px;
+  border: 2px solid red;
+  color: black;
+}
+
+.location .section-title {
+  background-image: url("../img/location.jpg");
+  background-attachment: fixed;
+}
+.location .locaiton__map {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
