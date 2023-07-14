@@ -35,12 +35,20 @@
         opacity: 0;
         transform: translateX(1000px);
     }
-    50% {
+    20% {
         opacity: 1;
         transform: none;
     }
-    100% {
+    80% {
         opacity: 1;
         transform: none;
+    }
+    80.1% {
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(1000px);
     }
 }
